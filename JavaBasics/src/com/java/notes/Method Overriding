@@ -16,6 +16,8 @@ This concept is called Method Overriding.
 the method in the parent class and execute the method in the subclass. Hence the 
 concept Method Overriding
 
+* We call method overriding as dynamic binding
+
 * Difference between Method Overloading and Method Overriding
 
 	Method overloading happens in same class, return type can be different,

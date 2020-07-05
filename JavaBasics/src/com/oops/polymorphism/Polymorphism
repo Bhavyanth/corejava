@@ -1,0 +1,27 @@
+* Upcasting: When reference variable of Parent class refers to an object of 
+			Child class, it is known as Upcasting.
+			
+			Ex: Vehicle v = new Vehicle(); // vehicle reference pointing to a vehicle object
+				Car c = new Car();  // car reference pointing to a car object
+				
+				Vehicle v1 = new Car(); // vehicle reference pointing to a car object
+				
+	1. By casting, the objecy is not changed, but it is labeled differently.
+	2. Casting of an object of child class to its parent class is called upcasting.
+	3. It is done implicitly (automatically)
+	4. Upcasting can be done whenever there is an is-a relationship
+	
+* Downcasting: Casting a reference of Parent class to one of its child class.
+		
+		To invoke a method that is specific to child class, we need
+			1. a reference of that class or
+			2. Cast the reference of the Parent to the child class
+		
+		Ex: Vehicle v = new Car(100,5); // Upcasting
+			
+			To invoke the child specific method, like getNoOfSeats(),
+				Car c = (Car) v;  // Downcasting
+				c.getNoOfSeats();
+				
+		-> Downcasting has to be performed manually.
+		-> Done using instanceof to know what type of object it is pointing to

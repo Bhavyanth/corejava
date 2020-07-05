@@ -1,0 +1,47 @@
+* Interface: It is a 'contract' which an implementing class must adhere to. (Behaviour)
+
+* It is 100% an abstract class.
+
+* It can contain variables and methods
+	All methods that are declared in an interface are by default public abstract
+	All variables in an interface are implicitly public static final
+	
+* Interfaces cannot be instantiated, they can only be implemented by classed or extended 
+by other interfaces.
+
+* A class can extend only one class at a time, but Interface can extend many interfaces
+
+Implementing Interface:
+	An interface can be implemented using keyword "implements"
+	This class should implement all the methods in the interface. Otherwise, that class becomes abstract.
+	Implementing class can have its own methods.
+	Implementing class can also extend only one super class or abstract class.
+	
+* Interface cannot be instantiated, but a reference of interface can be created
+* If you define a reference variable whose type is an interface, any object you assign to it must
+	be an instance of a class that implements the interface.
+	
+* One interface can extend many interfaces, one class can implement multiple interfaces
+		Ex: interface BlueTooth	{
+				void sendFile();
+				void receiveFile();
+			}
+			interface Phone	{
+				void makeCall();
+				void attendCall();
+			}
+			interface WhatsApp	{
+				void sendMessage();
+				void receiveMessage();
+			}
+			
+			class SmartPhone implements BlueTooth, Phone, Whatsapp{
+			// implements all methods in interface
+			}
+			
+			class iPhone extends SmartPhone implements BlueTooth, Whatsapp{
+			
+			}
+
+* Default Methods: Need to ADD;
+
