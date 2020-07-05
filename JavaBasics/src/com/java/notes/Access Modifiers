@@ -1,0 +1,12 @@
+ Access Levels:
+	 * Modifier		Class		Package		SubClass	  World
+	 * 
+	 * public		 	Y			Y			Y			Y
+	 * protected		Y			Y			Y			N
+	 * private			Y			N			N			N
+	 * no modifier		Y			Y			N			N
+
+A final class cannot be subclassed.
+   Subclass -> use extends keyword.
+A final method cannot by overridden by subclasses.
+A final variable can be initialized only once.	 

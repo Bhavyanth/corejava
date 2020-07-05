@@ -1,0 +1,22 @@
+* Private members of the superclass are not inherited by the subclass, 
+instead they can be accessed indirectly using public methods.
+
+* Member with default access specifier in superclass cannot be inherited by subclass 
+in other packages. They can be accessed directly using their names in subclasses 
+within the same package as superclass;
+
+* The protected modifier specifies that the member can only be accessed within its 
+own package and, in addition, by a subclass of its in another package.
+
+* Constructors are not members of a class. So they are not inherited by a subclass, 
+but the constructor of the superclass can be invoked from the subclass.
+
+Types of Inheritance:
+Single: Employee -> person
+Multilevel: PermanentEmployee -> Employee -> Person (Not supported in java)
+
+Hierarchical: 	PermanentEmployee
+									-> Employee
+				TemporaryEmployee
+
+				

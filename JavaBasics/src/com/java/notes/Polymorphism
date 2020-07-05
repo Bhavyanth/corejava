@@ -1,0 +1,9 @@
+* Upcasting: When reference variable of Parent class refers to an object of 
+			Child class, it is known as Upcasting.
+			
+			Ex: Vehicle v = new Vehicle(); // vehicle reference pointing to a vehicle object
+				Car c = new Car();  // car reference pointing to a car object
+				
+				Vehicle v1 = new Car(); // vehicle reference pointing to a car object
+
+* Downcasting: Casting a reference of Parent class to one of its child class.
