@@ -15,8 +15,17 @@ public class NumericDataTypes {
 	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 	short x= 10;
-	/*9.8 can be considered as double (as 8 bytes), hence we convert to float*/
-	float y = (float)9.8; 
+	
+	/**
+	 * Lower size data type can be assigned to higher size data type automatically
+	 * called as Implicit conversion
+	 * 
+	 * Casting is the process of converting the value to different type than its source
+	 * Explicit conversion
+	 * 
+	 * 9.8 can be considered as double (as 8 bytes), hence we convert to float
+	 */
+	float y = (float)9.8;  // Explicit 
 	double z = 17.9;
 	char a = 'B';
 	boolean b = false;

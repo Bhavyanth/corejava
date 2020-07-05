@@ -1,0 +1,37 @@
+break;
+
+Used to terminate a loop and a switch-case block
+When executed, the control flow will be transfered to teh statement that follow after the end of the loop
+Ex: int a =0,b,1,c=0,cnt =2;
+	syso(a + "," + b);
+	while(cnt<20)
+	{
+		c=a+b;
+		syso("," + c);
+		if(c%11 == 0)
+			break;
+		cnt ++;
+		a=b;
+		b=c;
+	}
+	
+Output: 0,1,1,2,3,5,8,13,21,34,55
+
+
+continue:
+
+Used to bypass the execution of rest of statements in the current iteration of a loop
+It skips to the end of the inner loop and continues the loop
+Ex: int a =0,b,1,c=0,cnt =2;
+	syso(a + "," + b);
+	while(cnt<15)
+	{
+		cnt++;
+		a=b;
+		b=c;
+		if(c%11 == 0)
+			continue;
+		syso("," + c);
+	}
+	
+Output: 0,1,1,2,3,5,8,13,21,34,89,144,233,377

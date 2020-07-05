@@ -1,1 +1,14 @@
-created for java basics
+Data types:
+Primitive and Reference
+
+Primitive: Boolean, Numeric 
+Reference: String, Array
+
+Primitive -> 	Boolean -> boolean
+				Numeric -> Character -> char
+				Numeric -> Integral
+				Numeric -> Integral -> Integer
+				Numeric -> Integral -> Floating Point
+				
+				Integer -> byte, short, int, long 
+				Floating Point -> float, double	

@@ -1,0 +1,14 @@
+Data types:
+Primitive and Reference
+
+Primitive: Boolean, Numeric 
+Reference: String, Array
+
+Primitive -> 	Boolean -> boolean (default false)
+				Numeric -> Character -> char (default \u0000)
+				Numeric -> Integral
+				Numeric -> Integral -> Integer
+				Numeric -> Integral -> Floating Point
+				
+				Integer -> byte, short, int, long  (default 0)
+				Floating Point -> float, double	 (default 0.0)
