@@ -1,7 +1,7 @@
 package com.oops.polymorphism;
 
 public class Bank_B extends Bank{
-	int getRateOfInterest(){
-		return 20;
+	float getRateOfInterest(){
+		return 13.4f;
 	}
 }
