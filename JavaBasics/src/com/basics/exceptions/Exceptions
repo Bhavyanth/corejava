@@ -1,0 +1,85 @@
+* Exception: Typically an abnormality or error that occurs during RUNTIME.
+			Cause the normal flow of program to be disrupted
+			They cannot be avoided and reliable exception must handle all kinds of application for smooth flow
+			
+	Ex: Divide by Zero
+		Accessing the elements of an array beyond its range
+		Invalid input
+		Opening a non-existent file
+		
+* When an exception occurs within a method, the method typically creates an exception object and hands it off
+to the runtime system.
+	1. Creating an exception object and handling it to the runtime system is called "throwing an exception"
+	2. Exception object has the information about the error, its type and state of the program when the 
+		error has occured.
+Then runtime system searches the call stack for the method that has the block of code that handles the exception.
+
+* Throwing:
+	* When an appropriate handler is found, the runtime system passes the exception to the handler.
+	* An exception handler is considered appropriate if the type of exception object thrown matches the type 
+		that can be handled by the handler.
+	* The exception handler chosen is said to catch the exception
+	* If the runtime system exhaustively searches for all methods on the call stack without finding an appropriate
+		exception handler, the runtime system terminates and uses default exception handler. 
+
+* Exception Hierarchy:
+			Checked Exception / compile time exception
+		* IOException
+		* SQLException
+		* BrokenBarrierException
+		* FileNotFoundException
+		
+			Unchecked Exception / Runtime exception
+		* ThreadDeath
+		* VirtualMachineError -> OutOfMemoryError and StackOverflowError
+		* IOError
+		* ArrayIndexOutOfBoundsException
+		* RuntimeException -> NullPointerException and ArithmeticException
+		
+
+* Checked Exception:
+	* Java compiler checks if the program either catches or list the occurring checked exception.
+	* Checked exceptions should be explicitly handled or properly propagated.
+	* If not, compiler error will occur.
+	
+* Unchecked Exceptions:
+	* Not subject to compile-time checking for exception handling
+	* Built-in unchecked exception classes
+		Error
+		RunTimeException and their subclasses
+	* Handling these exceptions may make the program cluttered and may become difficult to manage 
+	
+* Exception Handling:
+	try - catch - finally
+	throws
+	
+	
+	* try - catch - finally
+		-> enclose the code that might throw an exception in TRY block
+		-> Each catch block is an exception handler, hence provide one or more catch blocks required for handling
+		-> The argument type, declares the type of exception that the handler can handle and must be a class
+			that inherits from the Throwable class
+		-> CATCH block contains code to print exception and also to recover the exception, gets executed only
+			if an exception object is thrown from its corresponding try block.
+		-> Finally block executes whether or not an exception occurs.
+		-> Putting cleanup code in finally block is always a good practice.
+		-> This block is optional
+		-> try block can have multiple catch blocks, but only one finally block
+			But if there are multiple catch blocks, they must be ordered from subclass to super class	
+			
+		try {
+		   //code
+		} catch (ExceptionType name){
+		} catch (ExceptionType name){
+		} finally block
+		
+
+Call Stack Mechanism:
+	* If an exception is not handled in the current try-catch block, it is thrown to the caller of that method.
+	* If the exception gets back to the main method and is not handled there, the program is terminated abnormally.
+	* A stack trace provides information on the execution history of the current thread and lists the names of 
+		the classes and methods that were called at the point when the exception occurred.
+		
+		
+		
+		
