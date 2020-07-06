@@ -1,0 +1,14 @@
+Map are sometimes called associative arrays.
+
+A Map object describes mappings from keys to values:
+	Duplicate keys are not allowed.
+	One-to-many mappings from keys to values are not permitted
+	
+The contents of the Map interface can be viewed and manipulated as collections
+	entrySet: Returns a set of all key-value pairs
+	keySet: Returns a set of all keys in the map
+	values: Returns a Collection of all values in the map
+	
+TreeMap orders the keys
+HashMap stores the keys in a hash table
+HashMap class is generally preferred for its efficiency unless sorted keys are needed.

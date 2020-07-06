@@ -1,0 +1,20 @@
+A set is a collection with no duplicate elements.
+A HashSet stores elements in a hash table.
+A TreeSet stores elements in a balanced binary tree.
+A LinkedHashSet in an ordered hash table.
+
+HashSet is a data structure that can be used to retrieve objects quickly in a set.
+	HashSet is an Unordered collection
+	A hash code is used to organize the objects in a HashSet
+	HashSet Methods:
+		boolean add(Object element)
+		void clear()
+		boolean contains(Object o)
+		boolean isEmpty()
+		boolean remove(Object o)
+		int size() 
+		
+TreeSet: 	Provides the properties of a set in an ordered collection.
+			Objects can be inserted in any order but are retrieved in a sorted order.
+			TreeSet uses Comparable interface to compare objects for sorting.
+			

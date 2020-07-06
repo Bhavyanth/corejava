@@ -1,6 +1,7 @@
 package com.basics.collections;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class ArrayListImpl {
 	public static void main(String[] args) {
@@ -13,6 +14,10 @@ public class ArrayListImpl {
 		for (Integer i : arrayList) {
 			System.out.println(i);
 		}
+		
+		Iterator iterator = arrayList.iterator();
+				while(iterator.hasNext())
+					System.out.println(iterator.next());
 		
 		arrayList.size(); // size of array (Number of elements contained in the array not initialized size)
 		arrayList.remove(2); // remove element based on index
