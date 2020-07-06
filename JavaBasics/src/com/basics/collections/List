@@ -1,0 +1,20 @@
+* List Interface:
+	Used for storing elements in an ordered way
+	Allows index based additions and retrieval of items
+	Allows duplicate elements
+	
+	List Implementations
+		Vector
+		ArrayList
+		LinkedList
+
+* ArrayList methods:
+	void
+	add(int index, Object element)
+	boolean add(object o)
+	boolean addAll(Collection)
+	boolean addAll(int index, Collection c)
+	void clear()
+	boolean contains(Object element)
+	Object get(int index)
+	

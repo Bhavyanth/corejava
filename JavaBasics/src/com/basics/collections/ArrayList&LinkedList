@@ -1,0 +1,14 @@
+* LinkedList element insertion is faster compared to arraylist.
+	-> Because ArrayList has to resize itself, as it in index based.
+	-> For frequent operations 
+	-> LinkedList is faster because of doubly linked list i.e., it has two pointers, one before element and one after element
+
+* LinkedList element deletion is faster compared to arraylist.
+
+* ArrayList search operation is fast compared to the LinkedList search operation.
+	as it is index based.
+* Since LinkedList uses doubly linked list, it needs double pointer and iterator to search.
+
+* LinkedList has more memory overhead than ArrayList 
+	-> Because in ArrayList each index only holds actual object.
+	-> In LinkedList each node holds both data and address of next and previous node
