@@ -1,0 +1,15 @@
+Iterators:
+
+For each loop:
+List<Student> studentList = new ArrayList<Student>();
+for(Student studentObj : studentList){
+	System.out.println(studentObj);
+}
+
+Iterator:
+List<Student> studentList = new ArrayList<Student>();
+Iterator<Student> elements = studentList.iterator();
+while(elements.hasNext()){
+	Student studentObj = elements.next();
+	System.out.println(studentObj);
+}

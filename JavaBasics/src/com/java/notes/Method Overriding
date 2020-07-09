@@ -1,0 +1,35 @@
+* A subclass can modify behaviour from a parent class.
+
+* A subclass can have a method with same name, argument list and return type
+(except co-variant type) as declared in parent class, but with different implementation.
+This concept is called Method Overriding.
+
+* Rules:
+	1. Method should be same as in the parent class
+	2. Method argument list should be same as in parent class.
+	3. Same return type (or its sub type)
+	4. The subclass overridden cannot have weaker access than super class method
+		Ex: If parent class method is public, then overridden method in subclass
+			cannot be private, protected or default.
+
+* When the overridden method is invoked using a subclass object, it will override 
+the method in the parent class and execute the method in the subclass. Hence the 
+concept Method Overriding
+
+* We call method overriding as dynamic binding
+
+			* Difference between Method Overloading and Method Overriding
+
+	Method overloading happens in same class, return type can be different,
+	number of arguments can be different, but method name should be same.
+	
+		Ex: int getRateOfInterest(){
+				return 20;
+			}
+			
+			double getRateOfInterest(int abc){
+				return 20;
+			}
+	
+	But in Method Overriding, we cannot change the return type and number of args. 
+			

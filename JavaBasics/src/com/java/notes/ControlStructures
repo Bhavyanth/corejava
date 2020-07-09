@@ -1,7 +1,7 @@
-break;
+break; (break statement)
 
 Used to terminate a loop and a switch-case block
-When executed, the control flow will be transfered to teh statement that follow after the end of the loop
+When executed, the control flow will be transfered to the statement that follow after the end of the loop
 Ex: int a =0,b,1,c=0,cnt =2;
 	syso(a + "," + b);
 	while(cnt<20)
@@ -18,7 +18,7 @@ Ex: int a =0,b,1,c=0,cnt =2;
 Output: 0,1,1,2,3,5,8,13,21,34,55
 
 
-continue:
+continue: (continue statement)
 
 Used to bypass the execution of rest of statements in the current iteration of a loop
 It skips to the end of the inner loop and continues the loop

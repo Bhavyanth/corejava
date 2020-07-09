@@ -1,0 +1,37 @@
+* Collection is a container that groups multiple elements into a single unit where each element is an object.
+
+* Collection is used to store retrieve and manipulate aggregate data.
+
+* All class and interfaces related to collection are present in java.util package.
+
+* Types of collection:
+	Simple Collection: -> Sets and Lists
+	Map -> map
+	
+	Sets have no duplicate elements
+	Lists are ordered collections that can have duplicate elements
+	
+	Map: Map uses key/value pairs to associate an object (the value) with a key. (key/value are objects)
+	
+* Set and Map can be sorted or unsorted.
+
+* Collection Hierarchy:
+											<<interface>>
+									   		  Collection 
+	
+	<<interface>>							<<interface>>					<<interface>>
+	     Set									List							Queue
+	     
+	     
+	 HashSet  		<<interface>>		ArrayList	Vector			 LinkedList		Priority Queue
+	 				  SortedSet  
+	 	
+	 LinkedHashSet	<<interface>>
+	 				 NavigableSet
+	 				 
+	 				   TreeSet		
+	 				   
+  
+	     
+	     
+	     

@@ -1,0 +1,18 @@
+A class declared as abstract is an abstract class.
+
+If a class contains any abstract method it has to be declared as abstract
+
+Abstract Method: A method in a class that is declared without any implementation.
+
+Abstract class can have attributes and normal methods with implementations along with abstract methods,
+
+Rules:
+	1. Abstract class cannot be instantiated.
+	2. Abstract class can be subclassed.
+	3. When a class inherits an abstract class with abstract methods, it has to provice implementation
+		for all the abstract methods to make it a concrete class.
+	4. If the subclass does not implement all the abstract methods, then the subclass also needs to be
+		declared abstract.
+	5. Abstract class can contain non abstract methods also.
+	6. If an object need not be created for a class, it can be declared as abstract 
+		though it does not have any abstract methods.
