@@ -18,7 +18,7 @@ concept Method Overriding
 
 * We call method overriding as dynamic binding
 
-* Difference between Method Overloading and Method Overriding
+			* Difference between Method Overloading and Method Overriding
 
 	Method overloading happens in same class, return type can be different,
 	number of arguments can be different, but method name should be same.
