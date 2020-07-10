@@ -1,0 +1,142 @@
+Java Database Connectivity:
+	Using jdbc we can persist data in the database from java application
+	
+	Java Application -> JDBC 	-> Oracle driver	-> Oracle
+						-> DB2 driver		-> DB2
+						-> MySQL driver  	-> MySQL
+						
+* Jdbc provides the facility of connecting to any database and to manipulate data in the database through java programs.
+* The JDBC API consists of a set of interface and classes written in the Java programming language.
+* Interfaces and classes are present in java.sql package
+* Java code calls JDBC library, which loads the JDBC Driver that talks to a specific database.
+
+Driver:
+	Driver types are used to categorize the technology used to connect to the database
+	JDBC driver vendor uses these types to describe how their product operates
+	The different types of jdbc drivers are:
+		1. JDBC-ODBC Bridge Driver (Bridge)
+		2. Native-API/partly Java driver (Native)
+		3. All Java/Net-protocol driver (Middleware)
+		4. All Java/Native-protocol driver (Pure)
+		
+Type 1:
+	* JDBC-ODBC driver translates JDBC calls into ODBC calls and sends them to ODBC driver for passing to the database.
+	* ODBC native code and native database client code must be loaded on each client machine.
+	
+Type 2:
+	* Native-API/partly Java technology-enabled driver
+	* Converts JDBC calls into calls on the client API for Oracle, Sybase, Informix, DB2 or other DBMS
+	* Requires that some binary code be loaded on each client machine
+	* No JDBC to odbc translation is needed
+	
+Type 3:
+	* Net-protocol, a complete java technology-enabled driver
+	* Translates JDBC API calls into a DBMS-independent net protocol, which is then translated to a DBMS protocol by a server
+	* The server middleware is able to connect all of its Java technology based clients to many different databases
+	* The specific protocol used depends on the vendor
+	* The most flexible JDBC API alternative
+	* Since the communication between the client and the middleware server is database independent, there is no need for the vendor db library on the client machine.
+	* At client side a single driver can handle any database.
+
+Type 4:
+	* Java/Native-protocol driver, a complete java technology-enabled driver
+	* Converts JDBC technology calls into the network protocol used by DBMS directly
+	* Allows a direct call from the client machine to the DBMS
+	* Several database vendors use Type IV Driver
+	* These drivers don't translate the requests to DB to ODBC or pass it to the client API for the DB, nor do they need a 
+		middleware layers for request indirection.
+		
+											JDBC API:
+											
+	-> DriverManager: This interface manages a list of database drivers
+	-> Driver: This interface handles the communication with the database server
+	-> Connection: Interface with methods for contacting a database
+	-> Statement: Used to submit the SQL statements to the database
+	-> ResultSet: These objects hold data retrieved from a database after you execute an SQL query using statement objects
+	-> SQLException: This class handles any errors that occur in a database application
+	
+											Database Access Steps:
+											
+	Load the driver
+		Define the connection URL
+			Establish the connection
+				Get the statement object
+					Execute the Queries
+						Process the Results
+							Close the connection	
+							
+* Step 1: Loading the driver: (in 2 ways)
+		The driver of the database has to be loaded before acquiring the connection
+		
+		* Using Class.forName
+			-> this can be used to load any java class and can be used to load the database driver class
+			-> Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+		* By creating the instance of the Driver Class
+			-> The instance of the driver class can be created as creating the instance of any class.
+	
+* Step 2: Making a Connection:
+		* The connection can be acquired by using getConnection method of Driver Manager
+		* The overloaded methods
+			-> getConnection(String URL)
+			-> getConnection(String URL, Properties prop)
+			-> getConnection(String URL, String user, String password)
+		* Ex: Connect to Oracle Database
+			-> String URL = "jdbc:oracle:thin:@oracleserver"1521:sampledatabase";
+			
+					@oracleserver -> refers to the IP address of the server
+					1521 -> Port number in which the server is listening
+					sampledatabase -> Its the name of the database which is given at origin
+					
+			-> Connection connection = DriverManager.getConnection(url,"U_name","Pwd");
+			
+	RDBMS				JDBC driver name 						URL Format
+		
+	MySQL			com.mysql.jdbc.Driver				jdbc:mysql://hostname/databaseName
+	Oracle			oracle.jdbc.driver.OracleDriver		jdbc:oracle:thin:@hostname:portNumber:databaseName	
+	DB2				com.ibm.db2.jdbc.net.DB2Driver		jdbc:db2:hostname:portNumber/databaseName
+	Sybase			com.sybase.jdbc.SybDriver			jdbc:sybase:Tds:hostname:portNumber/databaseName
+			
+							
+Step 3:
+	* Used to create SQL statement
+	* Object of the statement can be acquired with the help of Connection Object
+	* Useful when static SQL statemenrs are used at runtime.
+	
+		Ex: Statemenr st = connection.createStatement();		
+		
+	-> Methods in Statement
+		* int executeUpdate(String SQL)
+			~ Returns the number of rows affected on executing the SQL statement
+			~ Used for DML operation - insert, update, delete
+		
+		* ResultSet executeQuery(String SQL)
+			~ Returns a ResultSet object
+			~ Used for executing select statement
+		
+		* boolean execute(String SQL)
+			~ Returns a boolean value if a ResultSet object can be retrieved; otherwise, if return false.
+			~ Can be used for any DB operation
+		
+		* Prepared Statement
+			-> The PreparedStatement interface extends the Statement interface which comes with added functionality
+			-> The PreparedStatement accepts parameters for which values can be assigned at runtime
+			-> All parameters in JDBC are represented by the "?" symbol, which is known as the parameter marker.
+			
+			Ex: PreparedStatement ps = connection.prepareStatement("insert into employee values (?,?,?)");
+					ps.setInt(1,1);
+					ps.setString(2,"Mini");
+					ps.setFloat(3,30000);
+					ps.executeUpdate();
+	
+	RESULTSET:
+		-> Resultset interface represents the result set of a database query
+		-> It is available in java.sql package
+		-> A ResultSet object contains a cursor, which points to the current row in the result set
+		Ex: Statement st = connection.createStatement();
+			ResultSet rs = st.executeQuery("select * from employee");
+			
+	Closing the connection:
+		-> The close() method of Connection interface is used to close the connection.
+		-> By closing the connection object, statement and ResultSet will be closed automatically 				
+	

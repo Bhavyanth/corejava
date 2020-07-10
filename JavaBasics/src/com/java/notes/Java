@@ -1,0 +1,82 @@
+* Java is object oriented language 
+	-> James Gosling invented this language at Sun MicroSystem in 995
+	-> Platform independence (write once run anywhere (WORA))
+	-> Architecture neutral
+	-> Secure (Bytecode, no pointers, security manager)
+	-> Robust
+		Memory management (Automatic garbage collection)
+		No direct access to memory addresses (as there are no pointers)
+		Array limit checking
+		Easy to create threads for multi threading
+
+* Java can run:
+	-> in a browser as an applet
+	-> on the desktop as an application
+	-> in a server to provide Services E.g. Database access
+	-> Embedded in a device
+	
+* Java programs are protable across platforms
+	Each program is translated into Java Byte code
+	Each machine has a Java Virtual Machine (JVM) which knows how to execute a java bytecode.
+	
+* Java Editions:
+
+	-> Java Standard Edition (J2SE or JSE)
+		Basic tools and libraries to build applications and applets (Standalone applications)
+	
+	-> Java Enterprise Edition (J2EE or JEE)
+		Tools and libraries to create servlets, javaServerPages, server based applications  etc (Web Applications, can be used by multiple users at a time)
+	
+	-> Java Micro Edition (J2ME or JME)
+		Libraries to create application to run in hand-held devices such as PDAs and cellular phones. (Device programs and mobile applications)
+
+* Java Platform is the name given to computing platform from Oracle that helps users to run and develop Java applications
+	The platform consists of two softwares JDK and JRE
+
+* JDK: A jdk is a program development environment for writing java applets and applications
+	JDK consists of a runtime environment called JRE, which sits in top of the operating system and the tools like interpreter (java) and compiler (javac)
+
+		Java programs are translated into an intermediate code called the byte code with the help of a java compiler (javac)
+		This byte code is platform independent and can run on any operating system.
+		So to compile and execute, we need JDK, but to run the bytecode alone, JRE is enough, therefore JRE is a subset of JDK
+
+		Source file(.java) -> compiler 	 -> converts to .class file  (bytecode)
+				   			(javac)
+
+* JRE: This is a part of JDK.
+	JRE consists of Java virtual machine (JVM), core classes called libraries (Java API) and supporting files.
+	JVM converts java byte code into machine language and executes it (depending on OS and target device)
+	JVM is an runtime interpreter , because it becomes an instance of JRE at run time. Bytecode executed by JVM is platform independent, but JVM is platform dependent
+	JVM is a subset of JRE
+
+Programming is done against an virtual machine (JVM), which resides in each particular device
+Which translates the byte code into the native code in machine understandable format
+
+We need two environments: 	Development Environment
+				Tools for development -> Eclipse, NetBeans
+
+							Execution Environment
+	
+JRE Java Runtime Environment
+ this takes the byte code and translates to understandable form of the particular machine and executes
+
+Which means the byte code is executed on the JVM and JVM has a translator called the interpreter which translates to the understandable for of particular OS or device
+and finally execute that code
+
+Source file(.java) -> compiler -> converts to .class file -> java bytecodes -> JVM  and Other libraries 
+							  			-> JRE [jvm gets environment to exceute .class file] 
+
+		This whole is present in JDK
+
+Writing a java program:
+	Any code written in java is written within a block termed as class.
+	The main method in a java program acts as an entry point signature
+	All java programs start their execution from the main method
+	The main method():
+		has to be declared as public static
+		takes String[] as an argument
+		return type is void
+
+
+
+

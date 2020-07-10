@@ -1,0 +1,30 @@
+* Transaction should be managed 
+	-> to increase performance
+	-> to maintain the integrity of the stored procedures and
+	-> to use distributed transactions
+
+* Transaction control the changes applied to a database
+	-> Treast an SQL statement or a group of SQL statements as one logical unit, and if any statement fails, the transaction fails
+
+* To commit the changes applied, invoke the commit() method on connection object as- conn.commit();
+
+* To rollback updates to the database made, invoke the rollback() method on the connection object as- conn.rollback();
+
+ResultSet MetaData:
+	The meta information about ResultSet can be obtained using ResultSetMetaData
+	This is used to get the column name, total number of columns, column type, table name etc.
+	
+		Ex: Statement st = connection.createStatement();
+			ResultSet rs = st.executeQuery("select * from employee");
+			ResultSetMetaData rsm = rs.getMetaData(); 
+			
+		Methods:
+				rsm.getColumnCount();
+				rsm.getColumnName(1); // based on index
+				rs,.getColumnTypeName(1); // based on index
+				
+* Callable Statement:
+	-> CallableStatement interface is used to call the stored procedures and functions.
+	-> CallableStatement instance is created using prepareCall() method in Connection interface
+	
+		Ex: CallableStatement stmt = conn.prepareCall("{call employee_insert(?,?)}");
