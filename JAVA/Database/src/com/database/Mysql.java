@@ -13,7 +13,7 @@ public class Mysql {
 		try{  
 			Class.forName("com.mysql.jdbc.Driver");  
 			 con=DriverManager.getConnection(  
-			"jdbc:mysql://35.232.124.236:3306/practice?characterEncoding=latin1","root","Tiger9959");  
+			"jdbc:mysql://35.232.124.236:3306/practice?characterEncoding=latin1","root","");  
 			//here sonoo is database name, root is username and password  
 			
 			}catch(Exception e){ System.out.println(e);}  
