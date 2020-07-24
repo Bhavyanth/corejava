@@ -9,19 +9,22 @@ import hibernateutil.HibernateUtil;
 
 public class Main {
 	 public static void main(String[] args) {
-	        Session session = HibernateUtil.getSessionFactory().openSession();
-	 
-	        session.beginTransaction();
-	        User user = new User();
-	 
-	        user.setUserId(1);
-	        user.setUsername("Mukesh");
-	        user.setCreatedBy("Google");
-	        user.setCreatedDate(new Date());
-	 
-	        session.save(user);
-	        session.getTransaction().commit();
-	 
-	    }
+		 
+		/* save update delete */
+		 
+		//InsertRecord.insert();
+		 //Loadrecords.load();
+		// Delete.delete();
+		 Update.updatewithoutcall();
+		//Loadrecords.load();
+		//Update.updatewithcall();
+		//Loadrecords.load();
+		 
+		 
+		/* Inheritence */
+		 //Inheritence.onetableInheritencce();
+		// Inheritence.tablePerClassInheritencce();
+		 //Inheritence.tablePerConcreteClassInheritencce();
+	 }
 
 }

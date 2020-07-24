@@ -2,6 +2,7 @@ package hibernatepractice.pojo;
 
 import java.util.Date;
 public class User {
+	private int v;
 	private int userId;
 	private String username;
 	private String createdBy;
@@ -29,6 +30,12 @@ public class User {
 	}
 	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
+	}
+	public int getV() {
+		return v;
+	}
+	public void setV(int v) {
+		this.v = v;
 	}
 	
 	
