@@ -15,5 +15,6 @@
          <!--  <mapping resource="PaymentTableperclass.hbm.xml" />  -->
          <!--   <mapping resource="PaymentTableperSubClass.hbm.xml" /> -->
          <mapping resource="PaymentTablePerConcreteClass.hbm.xml" /> 
+          <mapping resource="Product.hbm.xml" /> 
     </session-factory>
 </hibernate-configuration>
