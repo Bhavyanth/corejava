@@ -5,7 +5,7 @@ public class Strings {
 		String string = "Hello World"; // declaring as a literal
 		String s2 = new String("Hello World"); // declaring as an object
 		
-		
+		// string.intern() points to the same reference of the string
 		System.out.println("Length: "+string.length()); // gives length of string
 		System.out.println("Char at: "+string.charAt(2)); // getting a particular character at index
 		System.out.println("Equals: "+string.equals(s2)); // comparing two strings

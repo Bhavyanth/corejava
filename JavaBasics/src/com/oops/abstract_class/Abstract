@@ -9,7 +9,7 @@ Abstract class can have attributes and normal methods with implementations along
 Rules:
 	1. Abstract class cannot be instantiated.
 	2. Abstract class can be subclassed.
-	3. When a class inherits an abstract class with abstract methods, it has to provice implementation
+	3. When a class inherits an abstract class with abstract methods, it has to provide implementation
 		for all the abstract methods to make it a concrete class.
 	4. If the subclass does not implement all the abstract methods, then the subclass also needs to be
 		declared abstract.

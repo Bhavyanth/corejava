@@ -1,7 +1,10 @@
 A set is a collection with no duplicate elements.
 A HashSet stores elements in a hash table.
+HashSet doesn't maintain any insertion order. Uses HashMap internally, allows only one null value
 A TreeSet stores elements in a balanced binary tree.
 A LinkedHashSet in an ordered hash table.
+Allows null value
+Internally uses map
 
 HashSet is a data structure that can be used to retrieve objects quickly in a set.
 	HashSet is an Unordered collection
@@ -17,4 +20,10 @@ HashSet is a data structure that can be used to retrieve objects quickly in a se
 TreeSet: 	Provides the properties of a set in an ordered collection.
 			Objects can be inserted in any order but are retrieved in a sorted order.
 			TreeSet uses Comparable interface to compare objects for sorting.
+			Tree map cannot have a null value, but have multiple null values.
 			
+
+
+			Iterator is the parent interface of all collection frameworks
+			Collection is an interface
+			Implements all methods

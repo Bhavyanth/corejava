@@ -19,8 +19,8 @@
 											<<interface>>
 									   		  Collection 
 	
-	<<interface>>							<<interface>>					<<interface>>
-	     Set									List							Queue
+	<<interface>>							<<interface>>					<<interface>>			<<interface>>
+	     Set									List							Queue					Dequeue
 	     
 	     
 	 HashSet  		<<interface>>		ArrayList	Vector			 LinkedList		Priority Queue
@@ -32,6 +32,6 @@
 	 				   TreeSet		
 	 				   
   
-	     
+	     Non-generic arrayList (to be noted)
 	     
 	     

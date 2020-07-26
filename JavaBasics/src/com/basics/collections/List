@@ -1,4 +1,4 @@
-* List Interface:
+* List Interface: extends collections
 	Used for storing elements in an ordered way
 	Allows index based additions and retrieval of items
 	Allows duplicate elements

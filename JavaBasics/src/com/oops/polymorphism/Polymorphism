@@ -6,7 +6,7 @@
 				
 				Vehicle v1 = new Car(); // vehicle reference pointing to a car object
 				
-	1. By casting, the objecy is not changed, but it is labeled differently.
+	1. By casting, the object is not changed, but it is labeled differently.
 	2. Casting of an object of child class to its parent class is called upcasting.
 	3. It is done implicitly (automatically)
 	4. Upcasting can be done whenever there is an is-a relationship

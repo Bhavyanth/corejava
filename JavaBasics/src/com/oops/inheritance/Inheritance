@@ -13,7 +13,7 @@ but the constructor of the superclass can be invoked from the subclass.
 
 Types of Inheritance:
 Single: Employee -> person
-Multilevel: PermanentEmployee -> Employee -> Person (Not supported in java)
+Multilevel: PermanentEmployee -> Employee -> Person
 
 Hierarchical: 	PermanentEmployee
 									-> Employee

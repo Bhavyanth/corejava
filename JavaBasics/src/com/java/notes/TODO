@@ -1,0 +1,20 @@
+comparable lo compareTo() POJO class
+
+
+comparator compare(ob1, ob2)
+
+
+Enumerator: vector and list...nxt element check...only one direction
+
+Iterator, we can remove,,;we can remove for all collections..only one direction...only remove option
+
+ListIterator: Only for lists...arrayList and linked list...bi-directional...extends iterator
+hasPrevious()
+previous()
+
+
+To be noted
+ConcurrentModificationException
+convertArray to list two ways
+How to make collections thread safe
+Fail-fast, fail-safe
