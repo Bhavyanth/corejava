@@ -6,11 +6,8 @@
 <hibernate-mapping>
 <class name="hibernate.pojo.Product" table="PRODUCTS">
 
-<composite-id>
-<key-property name="productId" column="pid"  />
-<key-property name="productName" column="pname" length="10" />
-</composite-id>
-
+<id name="productId" column="pid"  />
+<property name="productName" column="pname" length="10"/>
 <property name="price"/>
 
 </class>

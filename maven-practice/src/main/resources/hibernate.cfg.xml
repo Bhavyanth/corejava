@@ -15,6 +15,12 @@
       <!--   <mapping resource="payment.hbm.xml" /> -->
        <!--  <mapping resource="payment3.hbm.xml" /> -->
          <!-- <mapping resource="payments.hbm.xml" /> -->
-          <mapping resource="product.hbm.xml" />
+          <!-- <mapping resource="product.hbm.xml" /> -->
+          <!-- <mapping resource="customer.hbm.xml"></mapping>
+		<mapping resource="vendor.hbm.xml"></mapping> -->
+		 <!-- <mapping resource="student.hbm.xml"></mapping>
+		<mapping resource="course.hbm.xml"></mapping> -->
+		 <mapping resource="student1.hbm.xml"></mapping>
+		<mapping resource="address.hbm.xml"></mapping>
     </session-factory>
 </hibernate-configuration>
