@@ -14,20 +14,17 @@
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
         <property name="hbm2ddl.auto">update </property>
-       <!--  <mapping resource="user.hbm.xml" /> -->
-           <mapping resource="PaymentTableperclass.hbm.xml" />  
-         <!--  <mapping resource="PaymentTableperSubClass.hbm.xml" /> --> 
-         <!-- <mapping resource="PaymentTablePerConcreteClass.hbm.xml" /> --> 
-           <mapping resource="Product.hbm.xml" /> 
-            <mapping resource="OmCustomer.hbm.xml" />  
-             <mapping resource="omVendor.hbm.xml" />  
-              <mapping resource="MoCustomer.hbm.xml" />  
-             <mapping resource="MoVendor.hbm.xml" />
-              <mapping resource="BomCustomer.hbm.xml" />  
-             <mapping resource="BomVendor.hbm.xml" />
-             <mapping resource="Student.hbm.xml" />  
-             <mapping resource="Course.hbm.xml" />
-             <mapping resource="ooStudent.hbm.xml" />  
-             <mapping resource="ooAddress.hbm.xml" />
+      <mapping class="hibernatepractice.pojo.annotation.Employee"/>
+      <mapping class="hibernatepractice.pojo.annotation.EmployeeCompositePk"/>
+       <mapping class="hibernatepractice.pojo.annotation.EmployeeCompositeEmbed"/>
+        <mapping class="hibernatepractice.pojo.annotation.AccEmployee"/>  
+        <mapping class="hibernatepractice.pojo.annotation.AccRegular_Employee"/>  
+        <mapping class="hibernatepractice.pojo.annotation.AccContract_Employee"/>  
+        <mapping class="hibernatepractice.pojo.annotation.CngEmployee"/>  
+        <mapping class="hibernatepractice.pojo.annotation.CngRegular_Employee"/>  
+        <mapping class="hibernatepractice.pojo.annotation.CngContract_Employee"/> 
+        <mapping class="hibernatepractice.pojo.annotation.InfEmployee"/>  
+        <mapping class="hibernatepractice.pojo.annotation.InfRegular_Employee"/>  
+        <mapping class="hibernatepractice.pojo.annotation.InfContract_Employee"/> 
     </session-factory>
 </hibernate-configuration>

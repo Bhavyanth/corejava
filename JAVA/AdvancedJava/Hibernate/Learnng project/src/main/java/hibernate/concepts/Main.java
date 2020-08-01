@@ -23,10 +23,10 @@ public class Main {
 		/* Inheritence */
 		// Inheritence.onetableInheritencce();
 		// Inheritence.tablePerClassInheritencce();
-		// Inheritence.tablePerConcreteClassInheritencce();
+		 //Inheritence.tablePerConcreteClassInheritencce();
 
 		/* compositeprimarykey */
-		// CompositePrimaryKey.save();
+		//CompositePrimaryKey.save();
 		// CompositePrimaryKey.load();
 
 		/* HQL Language */
@@ -45,7 +45,10 @@ public class Main {
 		//Criterias.multipleProjections();
 		
 		/* Native query */
-		NativeQuery.load();
+		//NativeQuery.load();
+		
+		/* namedquery */
+		Namedquery.namedQuery();
 	}
 
 }

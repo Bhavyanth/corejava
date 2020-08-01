@@ -13,5 +13,16 @@
 
 <property name="price"/>
 
+
 </class>
+
+<!-- for Native query -->
+<sql-query name="sampleNamedQuery">
+    select * from PRODUCTS
+</sql-query>
+
+<!-- for HQl query -->
+<query name="Myquery">
+<![CDATA[from Product p where p.price>:java4s ]]>
+</query>
 </hibernate-mapping>
