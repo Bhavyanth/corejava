@@ -13,6 +13,8 @@ public class Polygon {
 	 * 
 	 * Common features of all polygon can be declared here
 	 */
+	
+	// Method :  modifier return type methodName(Paramters)
 	protected int height;
 	protected int width;
 	public void setValues(int a, int b) {

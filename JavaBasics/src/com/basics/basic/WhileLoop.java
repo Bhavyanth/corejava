@@ -8,9 +8,11 @@ public class WhileLoop {
 		 * }
 		 * 
 		 * Used when number of iterations are not known
+		 * 
 		 */
 		int a = 0;
 		int b = 10;
+		
 	while ( a < 10){
 		System.out.println(a); // executes until the condition is false
 		a++;

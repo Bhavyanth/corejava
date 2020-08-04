@@ -11,4 +11,7 @@ public class Rectangle extends Polygon { // we are inheriting properties of poly
 	public double area() {
 		return (height*width);
 	}
+	/*public double area() {
+		return (height*width);
+*/	//}
 }

@@ -5,7 +5,7 @@ public class Logical {
 	 * && AND (Both conditions must be true)
 	 * || OR  (Either of the condition must be true)
 	 * @param args
-	 */
+	 */ 
 	public static void main(String[] args) {
 		int x = 10;
 		int y = 20;
