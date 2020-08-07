@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:p="http://www.springframework.org/schema/p"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans  
-               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 
+	<!-- To activate the annotation in the spring framework -->
+	<context:annotation-config />
 	<bean id="studentbean" class="com.pojo.Student">
 		<property name="name" value="Vimal Jaiswal"></property>
 	</bean>
@@ -237,8 +242,7 @@
 	<!-- Setter Injection with Non-String Map (having dependent Object) -->
 	<bean id="anss3" class="com.pojo.Answer">
 		<property name="id" value="1"></property>
-		<property name="name"
-			value="Java is a Programming Language"></property>
+		<property name="name" value="Java is a Programming Language"></property>
 		<property name="by" value="12/12/2001"></property>
 	</bean>
 	<bean id="anss4" class="com.pojo.Answer">
@@ -258,7 +262,8 @@
 		<constructor-arg value="Varun@gmail.com"></constructor-arg>
 	</bean>
 
-	<bean id="qs4" class="com.pojo.Question" init-method="initBean" destroy-method="destroyBean">
+	<bean id="qs4" class="com.pojo.Question" init-method="initBean"
+		destroy-method="destroyBean">
 		<property name="id" value="1"></property>
 		<property name="name" value="What is Java?"></property>
 		<property name="answersMapobj">
@@ -268,37 +273,124 @@
 			</map>
 		</property>
 	</bean>
+
+	<bean id="customBeanPostProcessor"
+		class="com.cocepts.CustomBeanPostProcessor" />
+
+	<!-- byName autowiring mode -->
+	<bean id="b" class="com.pojo.AutowiringA"></bean>
+	<bean id="a" class="com.pojo.AutowiringB" autowire="byName"></bean>
+
+
+	<!-- byType autowiring mode -->
+
+	<!-- <bean id="b1" class="com.pojo.AutowiringA"></bean> -->
+	<bean id="a1" class="com.pojo.AutowiringB" autowire="byType"></bean>
+
+
+	<!-- No Autowire mode -->
+
+	<bean id="a2" class="com.pojo.AutowiringB" autowire="no"></bean>
+
+
+	<!-- Factory method -->
+	<bean id="af" class="com.cocepts.factorymethod.A"
+		factory-method="getA"></bean>
+
+	<!-- static factorymethod -->
+	<bean id="p" class="com.cocepts.factorymethod.PrintableFactory"
+		factory-method="getPrintable"></bean>
+
+
+	<!-- Non static factorymethod -->
+	<bean id="pfactory"
+		class="com.cocepts.factorymethod.PrintableFactory"></bean>
+	<!-- if we dont add factory-bean then we will face below issue No matching 
+		factory method found: factory method 'getPrintableObj()'. Check that a method 
+		with the specified name exists and that it is static. -->
+	<bean id="pns" class="com.cocepts.factorymethod.PrintableFactory"
+		factory-method="getPrintableObj" factory-bean="pfactory"></bean>
+
+
+
+	<!-- @Resource -->
+	<bean id="mycompany" class="com.pojo.Company">
+		<property name="name" value="Test Pvt. Ltd." />
+		<property name="location" value="India" />
+	</bean>
+
+	<bean id="myemployee" class="com.pojo.EmployeeResource">
+		<property name="id" value="123456" />
+		<property name="name" value="Charlotte O' Neil" />
+	</bean>
+
+
+
+	<!-- database configuration -->
+
+	<bean id="ds"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver" />
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/hibernate?characterEncoding=latin1" />
+		<property name="username" value="root" />
+		<property name="password" value="admin" />
+	</bean>
+
+	<bean id="jdbcTemplate"
+		class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="ds"></property>
+	</bean>
+
+	<bean id="userdao" class="com.dao.UserDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+
+
+	<!-- namedjdbctemplate -->
+	<bean id="namedTemplate"
+		class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg ref="ds"></constructor-arg>
+		</bean>
+		
+		<bean id="userdaonamedtemplate" class="com.dao.UserDao">
+		<property name="namedTemplate" ref="namedTemplate"></property>
+	</bean>
 	
-     <bean id="customBeanPostProcessor"
-               class="com.cocepts.CustomBeanPostProcessor" />
-               
-               <!-- byName autowiring mode -->
-      <bean id="b" class="com.pojo.AutowiringA"></bean>  
-		<bean id="a" class="com.pojo.AutowiringB" autowire="byName"></bean>  
+	
+	
+	
+	
+	<!-- Hibernate Integration -->
+	
+	<!-- <bean id="mysessionFactory"  class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">  
+        <property name="dataSource" ref="ds"></property>  
+          
+        <property name="mappingResources">  
+        <list>  
+        <value>employee.hbm.xml</value>  
+        </list>  
+        </property>  
+          
+        <property name="hibernateProperties">  
+            <props>  
+                <prop key="hibernate.dialect">org.hibernate.dialect.Oracle9Dialect</prop>  
+                <prop key="hibernate.hbm2ddl.auto">update</prop>  
+                <prop key="hibernate.show_sql">true</prop>  
+                  
+            </props>  
+        </property>  
+    </bean>  
+    
+    <bean id="hibernatetemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">  
+    <property name="sessionFactory" ref="mysessionFactory"></property>  
+    </bean> 
+    
+     <bean id="hiebrnatedao" class="com.dao.HibernateDao">  
+    <property name="template" ref="hibernatetemplate"></property>  
+    </bean>  -->
 		
 		
-		<!-- byType autowiring mode -->
 		
-		<!-- <bean id="b1" class="com.pojo.AutowiringA"></bean> -->  
-		<bean id="a1" class="com.pojo.AutowiringB" autowire="byType"></bean>  
-		
-		
-		<!-- No Autowire mode -->
-		
-		<bean id="a2" class="com.pojo.AutowiringB" autowire="no"></bean>  
-		
-		
-		<!-- Factory method -->
-		<bean id="af" class="com.cocepts.factorymethod.A" factory-method="getA"></bean>  
-		
-		<!-- static factorymethod -->
-		<bean id="p" class="com.cocepts.factorymethod.PrintableFactory" factory-method="getPrintable"></bean> 
-		
-		
-		<!-- Non static factorymethod -->
-		<bean id="pfactory" class="com.cocepts.factorymethod.PrintableFactory"></bean>  
-		<!-- if we dont add factory-bean then we will face below issue 
-		No matching factory method found: factory method 'getPrintableObj()'. Check that a method with the specified name exists and that it is static. -->
-		<bean id="pns" class="com.cocepts.factorymethod.PrintableFactory" factory-method="getPrintableObj"   
-		factory-bean="pfactory"></bean>  
 </beans>  

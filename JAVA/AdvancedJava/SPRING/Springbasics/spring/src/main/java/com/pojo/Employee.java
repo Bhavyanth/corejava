@@ -5,6 +5,7 @@ public class Employee {
 	private String name;
 	private String email;
 	private Address address;
+	private String  salary;
 
 	public Employee() {
 		System.out.println("def cons");
@@ -74,7 +75,9 @@ public class Employee {
 		this.address = address;
 	}
 	
-	
+	public  String get() {
+		return "hello";
+	}
 	
 	
 	
