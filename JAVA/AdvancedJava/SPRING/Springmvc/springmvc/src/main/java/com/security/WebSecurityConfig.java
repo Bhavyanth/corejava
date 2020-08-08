@@ -27,5 +27,21 @@ public class WebSecurityConfig implements WebMvcConfigurer {
         .logout()  
         .logoutUrl("/j_spring_security_logout")  
         .logoutSuccessUrl("/")  ;
+		
+		
+		/* exampe configuration */
+	/**	http
+        .authorizeRequests()
+          .antMatchers("/", "/home").permitAll() // (3)
+          .anyRequest().authenticated() // (4)
+          .and()
+       .formLogin() // (5)
+         .loginPage("/login") // (5)
+         .permitAll()
+         .and()
+      .logout() // (6)
+        .permitAll()
+        .and()
+      .httpBasic();**/
 	}
 }
