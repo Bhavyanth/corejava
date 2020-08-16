@@ -15,6 +15,8 @@ export class BasiccomponentComponent implements OnInit {
 
   save() {
     this.service.access();
+   //this.service.PostMethod();
+   //this.service.PostsigninMethod();
   }
 
 }

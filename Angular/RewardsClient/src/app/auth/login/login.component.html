@@ -1,0 +1,39 @@
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Login Form -->
+        <form #loginForm="ngForm">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-append">
+                        <span class="input-group-text"> <i class="fa fa-user">
+                        </i></span>
+                    </div>
+                    <input type="text" [ngClass]="{'is-invalid':userName.invalid && (userName.dirty || userName.touched) , 'is-valid': !(userName.invalid )}" id="userName" class="  form-control fa fa-times" style="box-shadow: none;" [(ngModel)]="loginModel.userName" name="userName"
+                        #userName="ngModel" placeholder="UserName" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-append">
+                        <span class="input-group-text"> <i class="fa fa-lock">
+                        </i></span>
+                    </div>
+                    <input type="password" id="password" [ngClass]="{'is-invalid':password.invalid && (password.dirty || password.touched) , 'is-valid': !(password.invalid )}" class="  form-control" style="box-shadow: none;" [(ngModel)]="loginModel.password" name="password"
+                        #password="ngModel" placeholder="password" required>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-primary" style="margin-right: 10px;" [disabled]="!loginForm.form.valid" (click)="signIn()">SignIn</button>
+                <button type="button" class="btn btn-primary" style="margin-left: 10px;" (click)="signUp()">SignUp</button>
+
+            </div>
+        </form>
+
+
+
+    </div>
+</div>

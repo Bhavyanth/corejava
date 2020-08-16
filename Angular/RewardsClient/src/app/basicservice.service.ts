@@ -37,9 +37,9 @@ export class BasicserviceService {
   access( ) {
 
     let headers = new Headers({'Content-Type': 'application/json'});  
- headers.append('Authorization','Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZGl0aHlhMiIsImlhdCI6MTU5Njk3NjE1OSwiZXhwIjoxNTk3MDYyNTU5fQ.T8KwGNwHGAN4UtX4_xW41VcWHRi5bwGMK9tgOh_BbVJrRylndTBjlnfGkgTTGqYFmn5SFeRHHr7QlnDjD6ePTg')
+ headers.append('Authorization','Bearer eyJhbGciOiJIUzUxMiJ9.eyJklzdWIiOiJhZGl0aHlhMiIsImlhdCI6MTU5NzI1MjIxOCwiZXhwIjoxNTk3MzM4NjE4fQ.eNlyLh_F3uAm1vCLnhPEuyol6sQJc5QZZNfduJYGmXonz6sPTYcrgUqnhMQeT6ZdAaKfmsmM3iKACOJSHB2DkA')
  let options = new RequestOptions({headers: headers});
-    this.http.get('http://localhost:8083/api/test/admin', options).subscribe(data => {
+    this.http.get('http://localhost:8083/api/test/all', options).subscribe(data => {
    
 })
   }
