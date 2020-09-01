@@ -11,7 +11,7 @@ export class AuthServiceService {
   authserviceUrl = environment.url + "api/auth/";
 
   public getToken(): string {
-    return localStorage.getItem('token');
+    return "";
   }
 
   public signUp(registerModel:any){

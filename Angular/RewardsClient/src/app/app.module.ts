@@ -12,7 +12,6 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { NotifierModule } from "angular-notifier";
 import { Router } from '@angular/router';
-import { BonusparametersaddComponent } from './bonusParametrs/bonusparametersadd/bonusparametersadd.component';
 import {BonusparameterModule} from '../app/bonusParametrs/bonusparameter.module';
 
 
@@ -20,7 +19,6 @@ import {BonusparameterModule} from '../app/bonusParametrs/bonusparameter.module'
   declarations: [
     AppComponent,
     BasiccomponentComponent,
-    BonusparametersaddComponent,
   ],
   imports: [
     BrowserModule,
