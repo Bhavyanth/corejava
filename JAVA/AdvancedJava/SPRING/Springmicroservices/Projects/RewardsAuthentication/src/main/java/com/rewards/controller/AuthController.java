@@ -58,6 +58,7 @@ public class AuthController {
 	ConfigProperties configProp;
 
 	@PostMapping("/signin")
+	//@Valid is used to validate the values inthe body
 	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
 		/*

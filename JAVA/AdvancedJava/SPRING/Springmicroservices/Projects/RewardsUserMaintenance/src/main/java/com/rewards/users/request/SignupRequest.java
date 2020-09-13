@@ -1,4 +1,4 @@
-package com.rewards.request;
+package com.rewards.users.request;
 
 
 import java.util.Set;
