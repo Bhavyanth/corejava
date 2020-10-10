@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url: "http://localhost:8701/"
+  authUrl: "http://localhost:8002/rewardsauthenticationserver/"
 };
 
 /*

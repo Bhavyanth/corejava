@@ -14,6 +14,10 @@ export class BaseserviceService {
     return this.http.post(url, body);
  }
 
+ postMethodWithHeaders(url:string ,body:any,headers:any){
+  return this.http.post(url, body,{headers: headers});
+  }
+
   
   
 }

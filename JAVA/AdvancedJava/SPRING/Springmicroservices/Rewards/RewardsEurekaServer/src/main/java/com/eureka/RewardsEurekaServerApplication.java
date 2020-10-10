@@ -9,7 +9,7 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
  *  the Eureka server and Eureka server knows all the client applications running on each port and IP address. Eureka Server is also known as
  *   Discovery Server.*/
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = { "com.eureka.security"})
 /*
  * The @EnableEurekaServer annotation is used to make your Spring Boot
  * application acts as a Eureka Server

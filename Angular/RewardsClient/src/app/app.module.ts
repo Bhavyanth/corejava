@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NotifierModule } from "angular-notifier";
 import { Router } from '@angular/router';
 import {BonusparameterModule} from '../app/bonusParametrs/bonusparameter.module';
+import {UsermaintenanceModule} from '../app/usermaintenance/usermaintenance.module';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import {BonusparameterModule} from '../app/bonusParametrs/bonusparameter.module'
     AuthenticationModule,
     HttpClientModule,
     BonusparameterModule,
+    UsermaintenanceModule,
     NotifierModule.withConfig({
       // Custom options in here
       position: {
