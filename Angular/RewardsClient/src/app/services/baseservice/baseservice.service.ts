@@ -18,6 +18,10 @@ export class BaseserviceService {
   return this.http.post(url, body,{headers: headers});
   }
 
+  getMethod(url:string ){
+    return this.http.get(url);
+  }
+
   
   
 }

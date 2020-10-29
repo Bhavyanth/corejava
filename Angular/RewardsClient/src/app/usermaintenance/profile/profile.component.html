@@ -1,0 +1,17 @@
+<div class="container">
+    User Details:
+    <div class="row" style="width: 50%;">
+        <div class="col-sm-6" style="background-color:lavender;">User Name: </div>
+        <div class="col-sm-6" style="background-color:lavender;">{{loggedinUser.username}}</div>
+        <div class="col-sm-6" style="background-color:lavender;">Email</div>
+        <div class="col-sm-6" style="background-color:lavender;">{{loggedinUser.email}}</div>
+    </div>
+    Roles:
+    <div class="row" style="width: 25%;">
+        <div *ngFor="let role of loggedinUser.roles" class="col-sm-6" style="background-color:lavender;"> {{role}}</div>
+
+    </div>
+
+
+
+</div>

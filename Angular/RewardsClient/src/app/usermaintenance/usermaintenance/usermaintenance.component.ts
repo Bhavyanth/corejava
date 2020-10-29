@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SharedserviceService} from '../../services/sharedservice/sharedservice.service';
 
 @Component({
   selector: 'app-usermaintenance',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsermaintenanceComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sharedserviceService: SharedserviceService) { }
 
+  loggedinUser : any;
+  isAdmin : any =false;
   ngOnInit(): void {
+    this.loggedinUser =this.sharedserviceService.loginUser;
+    this.isAdmin = this.sharedserviceService.isAdmin();
   }
 
 }

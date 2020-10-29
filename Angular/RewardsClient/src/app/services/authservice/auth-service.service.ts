@@ -9,8 +9,7 @@ import { HttpHeaders } from '@angular/common/http';
 export class AuthServiceService {
 
   constructor(private baseService : BaseserviceService) { }
-  authSignUpServiceUrl = environment.authUrl + "api/auth/";
-  authLoginServiceUrl =environment.authUrl;
+  authServiceUrl =environment.authUrl;
 
   public getToken(): string {
     return "";
@@ -19,13 +18,13 @@ export class AuthServiceService {
   public signUp(registerModel:any){
     let headers = new HttpHeaders();
     headers = headers.append('noToken', 'noToken');
-    return this.baseService.postMethodWithHeaders(this.authSignUpServiceUrl +"signup",registerModel,headers);
+    return this.baseService.postMethodWithHeaders(this.authServiceUrl +"signup",registerModel,headers);
   }
 
   public signIn(registerModel:any){
     let headers = new HttpHeaders();
     headers = headers.append('noToken', 'noToken');
-    return this.baseService.postMethodWithHeaders(this.authLoginServiceUrl +"login",registerModel,headers);
+    return this.baseService.postMethodWithHeaders(this.authServiceUrl +"signin",registerModel,headers);
   }
   
 }

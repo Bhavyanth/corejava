@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  authUrl: "http://localhost:8002/rewardsauthenticationserver/"
+  authUrl: "http://localhost:8002/rewardsauthenticationserver/api/auth/",
+  userMaintenanceUrl:"http://localhost:8002/rewardsusermaintenanceserver/UserMaintance/"
 };
 
 /*

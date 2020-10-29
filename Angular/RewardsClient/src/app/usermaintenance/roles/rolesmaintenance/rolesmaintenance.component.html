@@ -1,0 +1,59 @@
+<div class="container">
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>User Id</th>
+                <th>User Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{userdetails?.id}}</td>
+                <td>{{userdetails?.username}}</td>
+                <td>{{userdetails?.email}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Roles</th>
+                    <th></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let role of userdetails?.roles">
+                    <td>
+                        <div>
+                            {{role?.role}}
+                        </div>
+                    </td>
+                    <td>
+                        <button type="button" (click)="deleteRole(role)" class="btn btn-link">Delete Role</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <div class="form-group">
+                <label for="sel1">Select role to add:</label>
+                <select class="form-control" id="sel1" [(ngModel)]="addedRole">
+                    <option *ngFor="let role of allRoles" [ngValue]="role">
+                        {{role.role}}
+                    </option>
+                </select>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-primary" (click)="addRole()">Add Role</button>
+    </div>
+    <div style="padding-top: 10px;">
+        <button type="button" class="btn btn-primary" (click)="updateUser()">Update User</button>
+    </div>
+</div>

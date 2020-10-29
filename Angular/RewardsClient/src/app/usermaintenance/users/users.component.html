@@ -1,0 +1,28 @@
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Roles</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.id}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+                <td>
+                    <div *ngFor="let role of user.roles">
+                        {{role.role}}
+                    </div>
+                </td>
+                <td>
+                    <button type="button" (click)="updateRoles(user)" class="btn btn-link">Update Roles</button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

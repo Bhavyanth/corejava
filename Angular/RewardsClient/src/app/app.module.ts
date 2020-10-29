@@ -14,6 +14,8 @@ import { NotifierModule } from "angular-notifier";
 import { Router } from '@angular/router';
 import {BonusparameterModule} from '../app/bonusParametrs/bonusparameter.module';
 import {UsermaintenanceModule} from '../app/usermaintenance/usermaintenance.module';
+import {TokenStorageServiceService} from './services/TokenStorageService/token-storage-service.service';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -29,6 +31,7 @@ import {UsermaintenanceModule} from '../app/usermaintenance/usermaintenance.modu
     HttpClientModule,
     BonusparameterModule,
     UsermaintenanceModule,
+    FormsModule,
     NotifierModule.withConfig({
       // Custom options in here
       position: {
@@ -57,7 +60,7 @@ import {UsermaintenanceModule} from '../app/usermaintenance/usermaintenance.modu
      provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,
     multi: true, //The multi: true option provided tells Angular that you are providing multiple interceptors 
-    deps: [Router]
+    deps: [TokenStorageServiceService] //The deps property is an array of provider tokens. The Logger and UserService classes serve as tokens for their own class providers. The injector resolves these tokens and injects the corresponding services into the matching factory function parameters.
   }
   ],
   bootstrap: [AppComponent]

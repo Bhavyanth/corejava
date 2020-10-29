@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { JwtHelperService } from '@auth0/angular-jwt';
+
 
   const TOKEN_KEY = 'auth-token';
   const USER_KEY = 'auth-user';
@@ -6,6 +8,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class TokenStorageServiceService {
+  jwtHelper = new JwtHelperService();
 
   
   constructor() { }
@@ -30,6 +33,13 @@ export class TokenStorageServiceService {
 
   public getUser() {
     return JSON.parse(sessionStorage.getItem(USER_KEY));
+  }
+
+  public isAuthenticated(): boolean {
+    const token = sessionStorage.getItem(TOKEN_KEY);
+    // Check whether the token is expired and return
+    // true or false
+    return !this.jwtHelper.isTokenExpired(token);
   }
 }
 

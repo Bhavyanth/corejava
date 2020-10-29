@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Injector } from '@angular/core';
 import {
   HttpRequest,
   HttpHandler,
@@ -12,22 +12,27 @@ import { Router } from '@angular/router';
 import { of, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { NotificationService } from '../notifications/notifier.service';
-@Injectable()
+import {TokenStorageServiceService} from '../TokenStorageService/token-storage-service.service';
+@Injectable({   providedIn: 'root' })
 export class TokenInterceptor implements HttpInterceptor {
-  constructor(public auth: AuthServiceService,private router: Router,private notificationService :NotificationService) {}
+  
+  constructor( private tokenStorageServiceService:TokenStorageServiceService,   private inj: Injector ) {}
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    
     let headers = request.headers
     .set('Content-Type', 'application/json');
-  
+    
    if (headers.get('noToken') === 'noToken') {
      headers = headers.delete('Authorization').delete('noToken');
+     request = request.clone({headers: headers});
    }else{
-    request.headers
-    .set("Authorization", 'Bearer ds');
+    request = request.clone({
+      setHeaders: {
+        Authorization: `Bearer `+this.tokenStorageServiceService.getToken()
+      }
+    });
    }
   
-   const newReq = request.clone({headers: headers});
+  
 
     return next.handle(request)//.pipe(catchError(x=> this.handleAuthError(x))); //here use an arrow function, otherwise you may get "Cannot read property 'navigate' of undefined" on angular 4.4.2/net core 2/webpack 2.70
   }
