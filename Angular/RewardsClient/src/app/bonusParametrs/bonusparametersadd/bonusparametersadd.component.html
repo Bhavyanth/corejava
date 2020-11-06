@@ -1,1 +1,62 @@
-<p>bonusparametersadd works!</p>
+<div class="container">
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ParameterId</th>
+                    <th>Parameter</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let parameter of parameters">
+                    <td>
+                        <div>
+                            {{parameter?.paramId}}
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            {{parameter?.paramName}}
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <div class="form-group">
+                <label for="sel1">Add new Parameter:</label>
+                <input type="text" id="parameter" [(ngModel)]="addedParameter" name="parameter">
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-primary" (click)="addParameter()">Add Parameter</button>
+
+        <div>
+            <label> New Parameters Added:</label>
+            <div>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let parameter of addedParameters">
+
+                            <td>
+                                <div>
+                                    {{parameter}}
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <div style="padding-top: 10px;">
+        <button type="button" class="btn btn-primary" (click)="updateParameters()">Update User</button>
+    </div>
+</div>

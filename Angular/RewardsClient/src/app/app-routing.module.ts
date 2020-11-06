@@ -39,10 +39,20 @@ const routes: Routes =
     component: RolesmaintenanceComponent,
     canActivate: [AuthGuard] // another child route component that the router renders
   },
+  {
+    path: 'ViewParams',
+    component: BonusparametersviewComponent,
+    canActivate: [AuthGuard] // another child route component that the router renders
+  },
+  {
+    path: 'AddParams',
+    component: BonusparametersaddComponent,
+    canActivate: [AuthGuard] // another child route component that the router renders
+  },
 ],
   },
  ]
-
+ 
  
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

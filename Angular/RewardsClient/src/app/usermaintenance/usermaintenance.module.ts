@@ -8,6 +8,8 @@ import { RouterModule } from '@angular/router';
 import { UsermaintenancebaseComponent } from './usermaintenancebase/usermaintenancebase/usermaintenancebase.component';
 import { RolesmaintenanceComponent } from './roles/rolesmaintenance/rolesmaintenance.component';
 import { FormsModule } from '@angular/forms';
+import { NgxBootstrapIconsModule ,allIcons } from 'ngx-bootstrap-icons';
+
 
 
 
@@ -16,7 +18,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    NgxBootstrapIconsModule.pick(allIcons)
   ],
   exports:[
     UsermaintenanceComponent,
